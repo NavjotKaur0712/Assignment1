@@ -1,0 +1,19 @@
+table {
+    width: 100%;   
+  }
+  
+  /* .mat-column-id{
+    width: 5%;
+  }
+   
+  .mat-column-name{
+    width:5%;
+  } 
+   */
+
+   div{
+     margin-top:5px;
+   }
+   mat-column-button{
+     padding-top: 5px;
+   }
