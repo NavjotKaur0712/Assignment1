@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { User } from '../shared/models/User';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -17,13 +17,15 @@ import { UserService } from '../shared/services/user.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  public users: any;
+   public users: any;
   dataSource: any[];
   displayedColumns: string[] = ['id', 'name', 'username', 'email', 'Actions'];
   private url = "https://jsonplaceholder.typicode.com/users";
   //status: any;
   newUser: any;
   dATA: any;
+
+
 
   constructor(private http: HttpClient,
               private router: Router, 
@@ -44,6 +46,10 @@ export class UsersComponent implements OnInit {
     this.router.navigate(['/users', user.id])
   }
 
+  toUpdate(user: { id: any; }) {
+    this.router.navigate(['/update', user.id])
+  }
+
   openDelete(message: string) {
     alert("Are you sure??");
     this._getService.deleteUsers()
@@ -59,6 +65,8 @@ export class UsersComponent implements OnInit {
     //   })
     // this._snackBar.open(message)
   }
+
+ 
 
   fileNameDialogRef!: MatDialogRef<DialogComponent>;
 

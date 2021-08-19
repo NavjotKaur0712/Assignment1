@@ -36,6 +36,7 @@ import { GetDetailsComponent } from './get-details/get-details.component';
 import { DialogComponent } from './dialog/dialog.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import { UserService } from './shared/services/user.service';
+import { UpdateComponent } from './update/update.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { UserService } from './shared/services/user.service';
     AppComponent,
     UsersComponent,
     GetDetailsComponent,
-    DialogComponent
+    DialogComponent,
+    UpdateComponent
   ],
   entryComponents: [
     DialogComponent

@@ -3,7 +3,7 @@
  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8" routerLink="/users">
     <ng-container matColumnDef="id">
         <th mat-header-cell *matHeaderCellDef> id </th>
-        <td mat-cell *matCellDef="let user"> <a  (click)="onSelect(user)" routerLink="/users" routerLinkActive>{{user.id}}</a> </td>
+        <td mat-cell *matCellDef="let user"> <a  (click)="onSelect(user)" routerLinkActive>{{user.id}}</a> </td>
     </ng-container>
 
     <ng-container matColumnDef="name">
@@ -89,7 +89,11 @@
          <button (click)="openDelete(message.value)">
             DELETE
         </button> 
+        <button (click)="toUpdate(user)" routerLink="/users">
+            UPDATE
+        </button> 
         </mat-cell>
+        
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
@@ -98,4 +102,5 @@
 <!-- <div class="example-button-row">
     <button  mat-raised-button color="warn"  routerLink='/create'  routerLinkActive>CREATE</button>
  </div> -->
- <button mat-raised-button color="warn" (click)="openDialog()">CREATE</button>
+ <!-- <button mat-raised-button color="warn" (click)="openDialog()">CREATE</button> -->
+ <button mat-raised-button color="warn" routerLink="/create">CREATE</button>
